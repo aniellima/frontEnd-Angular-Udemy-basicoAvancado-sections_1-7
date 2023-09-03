@@ -1,0 +1,28 @@
+<ng-content select="h1"></ng-content>
+<h2>Diretrivas Estruturais</h2>
+<h3>ngIf</h3>
+<p *ngIf="condition; else elseBlock">True</p>
+<ng-template #elseBlock>
+  <p>False</p>
+</ng-template>
+<hr>
+<p *ngIf="conditionClick">True</p>
+<p *ngIf="!conditionClick">False</p>
+<button (click)="onClick()">Clicar</button>
+<hr>
+<h3>ngFor</h3>
+<ul>
+  <li *ngFor="let item of list; let i = index" (click)="onClickEventList(i)">[{{i}}] - {{item.nome}} - {{item.idade}}</li>
+</ul>
+<p>{{list.length}}</p>
+<button (click)="onClickAddList()">Add</button>
+<hr>
+<h3>ngSwitch</h3>
+<input type="text" [(ngModel)]="nome">
+<div [ngSwitch]="nome">
+  <p *ngSwitchCase="'Aniel'">Aniel</p>
+  <p *ngSwitchCase="'Dax'">Dax</p>
+  <p *ngSwitchCase="'Chico'">Chico</p>
+  <p *ngSwitchDefault>Não localizado!</p>
+</div>
+<ng-content select="h3"></ng-content>

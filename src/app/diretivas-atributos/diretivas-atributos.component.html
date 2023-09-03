@@ -1,0 +1,14 @@
+<ng-content select="h1"></ng-content>
+<hr>
+<h2>Diretivas de Atributo</h2>
+<h3>ngClass</h3>
+<p [ngClass]="{'active': valor, 'disabled': !valor}">Class</p>
+<br>
+<h3 [ngStyle]="{'height': alturaPX, 'background': planoFundo}">ngStyle</h3>
+<hr>
+<h3>ngModel</h3>
+<input [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+<li *ngFor="let item of list">{{item.nome}}</li>
+<hr>
+<ng-content select="h3"></ng-content>
